@@ -1,0 +1,10 @@
+# 软件安装配置
+* [gitlab](gitlab.md)
+* [jdk](jdk.md)
+* [mongodb](mongodb.md)
+* [mysql](mysql.md)
+* [nginx](nginx.md)
+* [redis](redis.md)
+* [rundeck](rundeck.md)
+* [tengine](tengine.md)
+* [zookeeper](zookeeper.md)

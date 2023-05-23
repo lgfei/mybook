@@ -1,0 +1,120 @@
+# Nginx
+
+## 安装epel仓库
+Nginx包可在EPEL存储库中找到，如果您没有安装EPEL存储库，可以运行以下命令
+```shell
+yum install epel-release
+```
+
+## 安装
+```shell
+yum install nginx
+```
+
+## 启用，禁用Nginx服务
+```shell
+systemctl enable nginx  
+systemctl disable nginx 
+``` 
+
+## 启动，停止，重启，重新加载配置，查看状态
+```shell
+systemctl start nginx  
+systemctl stop nginx  
+systemctl restart nginx  
+systemctl reload nginx   
+systemctl status nginx 
+```
+
+## 检查Nginx版本
+```shell
+nginx -v
+```
+
+## 如果您正在运行防火墙，则还需要打开端口80和443
+```shell
+firewall-cmd --permanent --zone=public --add-service=http  
+firewall-cmd --permanent --zone=public --add-service=https  
+firewall-cmd --reload 
+```
+
+## location proxy_pass 后面的url 加与不加/的区别
+在nginx中配置proxy_pass时，当在后面的url加上了/，相当于是绝对根路径，则nginx不会把location中匹配的路径部分代理走;如果没有/，则会把匹配的路径部分也给代理走。 
+<hr/> 
+下面四种情况分别用http://192.168.1.4/proxy/test.html 进行访问。  
+
+* 第一种
+<pre>
+location  /proxy/ {
+    proxy_pass http://127.0.0.1:81/;
+}
+</pre>
+结论：会被代理到http://127.0.0.1:81/test.html 这个url
+<hr/>
+
+* 第二种(相对于第一种，最后少一个 /)
+<pre>
+location  /proxy/ {
+    proxy_pass http://127.0.0.1:81;
+}
+</pre>
+结论：会被代理到http://127.0.0.1:81/proxy/test.html 这个url
+<hr/>
+
+* 第三种
+<pre>
+location  /proxy/ {
+    proxy_pass http://127.0.0.1:81/ftlynx/;
+}
+</pre>
+结论：会被代理到http://127.0.0.1:81/ftlynx/test.html 这个url。
+<hr/>
+
+* 第四种(相对于第三种，最后少一个 / )：
+<pre>
+location  /proxy/ {
+    proxy_pass http://127.0.0.1:81/ftlynx;
+}
+</pre>
+结论：会被代理到http://127.0.0.1:81/ftlynxtest.html 这个url
+- [参考1](https://yq.aliyun.com/articles/506996?spm=5176.10695662.1996646101.searchclickresult.411f490dl0ZSc0)  
+
+## 开启文件预览模式
+如果放一个自定义后缀的文件在nginx目录下（例如，my.hosts），然后在浏览器访问这个文件，默认是会把源文件下载到本地，如果不想下载，而想想打开txt文件那样浏览文件内容的话，需要对 conf/mime.types 做如下修改
+<pre>
+types {
+    text/html                                        html htm shtml;
+    text/css                                         css;
+    text/xml                                         xml;
+    image/gif                                        gif;
+    image/jpeg                                       jpeg jpg;
+    application/javascript                           js;
+    application/atom+xml                             atom;
+    application/rss+xml                              rss;
+
+    text/mathml                                      mml;
+    text/plain                                       txt hosts; #此处默认只有txt 
+    text/vnd.sun.j2me.app-descriptor                 jad;
+    text/vnd.wap.wml                                 wml;
+    text/x-component                                 htc;
+    ...
+}
+</pre>
+
+## 开启目录浏览模式
+如果将nginx作为一个文件下载中心。组需要开启目录浏览功能。如下所示：
+<pre>
+        location /dl/ {
+            root html;
+            #开启目录浏览
+            autoindex on;
+            #以html风格将目录展示在浏览器中
+            autoindex_format html;
+            #切换为 off 后，以可读的方式显示文件大小，单位为 KB、MB 或者 GB
+            autoindex_exact_size off;
+            #以服务器的文件时间作为显示的时间
+            autoindex_localtime on;
+            #展示中文文件名
+            charset utf-8,gbk;
+        }
+</pre>
