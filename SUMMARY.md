@@ -28,3 +28,4 @@
       - [zookeeper](notes/linux/softwares/zookeeper.md)
     - [升级内核](notes/linux/upgrade/upgrade.md)
     - [用户管理](notes/linux/user/user.md)
+- [好用的工具](tools/tools.md)
