@@ -118,3 +118,20 @@ types {
             charset utf-8,gbk;
         }
 </pre>
+
+## 禁用浏览器缓存
+对于一些纯静态网页，请求不带版本号或者随机数，如果用户想获取最新的内容需要手动刷新缓存，此时可以配置禁用浏览器缓存以达到每次请求都从服务器拿最新的文件。
+```nginx
+server {
+    listen       80;
+    listen  [::]:80;
+    server_name  localhost;
+
+    location / {
+        #设置禁止浏览器缓存，每次都从服务器请求
+        add_header Cache-Control no-cache;
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+}
+```

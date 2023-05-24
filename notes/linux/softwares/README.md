@@ -1,5 +1,6 @@
 # 软件安装配置
 * [gitlab](gitlab.md)
+* [glusterfs](glusterfs.md)
 * [jdk](jdk.md)
 * [mongodb](mongodb.md)
 * [mysql](mysql.md)

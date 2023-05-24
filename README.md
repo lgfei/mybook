@@ -15,28 +15,49 @@
 
 # 技能清单
 
-* Java, Spring, Spring Boot, Spring Cloud, MyBatis, Dubbo
-* Golang ,NodeJS, Shell
-* Mysql, Oracle, Redis, Zookeeper, MongDB, Etcd, Apollo, Kafka, Ftp, Minio, NFS, GlusterFS
-* HTML, CSS, JavaScript, easyUI, React
-* Linux, Tomcat, Nginx, Docker, Kubernetes
-* Maven, Git, Jenkins,  Harbor,  Helm
+* 编程语言：Java, Golang, Shell, NodeJS
+* 技术框架：Spring, Spring Boot, Spring Cloud, MyBatis, Dubbo, React
+* 数据库：Mysql, Oracle, Redis, MongDB
+* 中间件：Nginx, Zookeeper, Apollo, Kafka, Minio, Etcd, NFS, GlusterFS
+* 开发工具：Linux, Eclipse, IDEA, VS Code, Goland, Git, Maven
+* 容器化：Docker, Kubernetes, Harbor, Helm
 
 # 教育背景
 
-* 2010-2014：长沙学院，信息与计算科学
+* 2010.09-2014.06：长沙学院，信息与计算科学
 
 # 工作经历
 
-* 2018-至今：云盛海宏，高级软件工程师
-  * 职责描述：
-      - 参与产品规划和架构设计，负责开发和维护产品前后端功能。
-  * 项目名称和描述：HEDP，Devops效能管理平台。TPAS，开放接口网关平台。VDS，图片处理中心。
-  * 技术栈和工具：Java, Spring, Spring Boot, Spring Cloud,MyBatis, Mysql, NodeJS, React, Linux, Tomcat, Nginx, Maven, Git, Docker, Kubernetes。
-* 2016-2018：岚正科技，软件开发工程师
-  * 职责描述：
-  * 项目名称和描述：
-  * 技术栈和工具：
+* 2018.05-至今：云盛海宏，架构师
+
+  职责描述：
+  - 参与产品规划和架构设计，负责开发和维护产品前后端功能。
+
+  技术栈和工具：Java, Spring, Spring Boot, Spring Cloud,MyBatis, Mysql, NodeJS, React, Linux, Tomcat, Nginx, Maven, Git, Docker, Kubernetes。
+
+* 2016.09-2018.05：岚正科技，高级软件开发工程师
+
+  职责描述：
+
+  技术栈和工具：
+
+* 2015.05-2016.09：赛意，java开发工程师
+
+  职责描述：
+
+  技术栈和工具：
+
+* 2014.06-2015.05：软通动力，java开发工程师
+
+  职责描述：
+
+  技术栈和工具：
+
+# 项目经验
+
+* HEDP：Devops效能管理平台。
+* TPAS：开放接口网关平台。
+* VDS：图片处理中心。
 
 # 个人项目
 
@@ -52,4 +73,3 @@
 # 兴趣爱好
 
 我喜欢研究新技术和编写开源软件。我也是一个热衷于健身和登山的人，在业余时间经常参加户外运动活动。
-

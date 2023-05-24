@@ -10,44 +10,53 @@ uname -r
 ```shell
 uname -a
 ```
+
 ## 重启
 ```shell
 reboot
 ```
+
 ## 查看服务日志
 ```shell
 journalctl -xefu xxx
 ```
+
 ## 查看端口占用
 ```shell
-netstat -lnp|grep 8080
+netstat -lnp | grep 8080
 ```
+
 ## 查看磁盘占用
 ```shell
 df -h
 du -sh
 du -h --max-depth=1
 ```
-## windows系统编写的sh文件再linux执行不了，需要用dos2unix进行格式转化
+
+## windows系统编写的sh文件在linux执行不了，需要用dos2unix进行格式转化
 ```shell
 yum install -y dos2unix
 dos2unix xxx.sh
 ```
+
 ## 查看selinux配置
 ```shell
 cat /etc/selinux/config
 ```
+
 ## 解压缩命令
 ```shell
 tar -zcvf 压缩文件名 .tar.gz 被压缩文件名
 tar -zxvf 压缩文件名.tar.gz
 
 ```
+
 ## 修改ssh端口
 ```shell
 sed -i 's/Port 22/Port 2222/' /etc/ssh/sshd_config
 service sshd restart
 ```
+
 ## 查看cpu
 总核数 = 物理CPU个数 X 每颗物理CPU的核数 <br>
 总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数 <br>
@@ -63,10 +72,12 @@ cat /proc/cpuinfo| grep "cpu cores"| uniq
 ```shell
 cat /proc/cpuinfo| grep "processor"| wc -l
 ```
+
 ## 查看是否虚拟机
 ```shell
 dmidecode -s system-product-name
 ```
+
 ## 修改主机名
 立即生效，重启后失效
 ```shell
@@ -77,6 +88,7 @@ hostname myhostname
 echo "HOSTNAME=myhostname" >> /etc/sysconfig/network
 echo "192.168.0.1 myhostname" >> /etc/hosts
 ```
+
 ## 查看文件的指定行
 查看第10行
 ```shell
@@ -90,6 +102,7 @@ sed -n -e 10p -e 20p file
 ```shell
 sed -n 10,20p file
 ```
+
 ## 别名alias
 查看所有别名
 ```shell
@@ -130,4 +143,10 @@ ssh root@192.168.1.2
 ```shell
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
+```
+
+## grep的高级用法
+从/var/log/目录中所有.log文件中查找包含字符ERROR的位置
+```shell
+grep -rn 'ERROR' *.log
 ```
