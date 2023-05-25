@@ -16,11 +16,11 @@
 # 技能清单
 
 * 编程语言：Java, Golang, Shell, NodeJS
-* 技术框架：Spring, Spring Boot, Spring Cloud, MyBatis, Dubbo, React
-* 数据库：Mysql, Oracle, Redis, MongDB
-* 中间件：Nginx, Zookeeper, Apollo, Kafka, Minio, Etcd, NFS, GlusterFS
+* 技术框架：Spring, Spring Boot, Spring Cloud, MyBatis, Dubbo, React, Ant Design
 * 开发工具：Linux, Eclipse, IDEA, VS Code, Goland, Git, Maven
-* 容器化：Docker, Kubernetes, Harbor, Helm
+* 容器化：Docker, Kubernetes, Harbor, Helm, kubebuilder
+* 数据库：Mysql, Oracle, Redis, MongDB
+* 中间件：Nginx, HAProxy, Zookeeper, Apollo, Kafka, Minio, Etcd, NFS, GlusterFS
 
 # 教育背景
 
@@ -29,29 +29,18 @@
 # 工作经历
 
 * 2018.05-至今：云盛海宏，架构师
-
-  职责描述：
-  - 参与产品规划和架构设计，负责开发和维护产品前后端功能。
-
-  技术栈和工具：Java, Spring, Spring Boot, Spring Cloud,MyBatis, Mysql, NodeJS, React, Linux, Tomcat, Nginx, Maven, Git, Docker, Kubernetes。
-
+  - 参与产品规划和架构设计，负责核心组件开发和维护。
+  - 带领开发与运维一起对基础组件和应用进行容器化落地实施。
+  - 负责制定开发规范以及CI/CD流程设计与开发。
+<br><br>
 * 2016.09-2018.05：岚正科技，高级软件开发工程师
-
-  职责描述：
-
-  技术栈和工具：
-
+  - xxx
+<br><br>
 * 2015.05-2016.09：赛意，java开发工程师
-
-  职责描述：
-
-  技术栈和工具：
-
+  - xxx
+<br><br>
 * 2014.06-2015.05：软通动力，java开发工程师
-
-  职责描述：
-
-  技术栈和工具：
+  - xxx
 
 # 项目经验
 
@@ -62,14 +51,13 @@
 # 个人项目
 
 * 个人项目名称和描述：在线聊天室，网页版聊天工具，以备不时之需。
-* 项目 GitHub 链接：[https://github.com/lgfei/webchat](https://github.com/lgfei/webchat)
+* GitHub地址：[https://github.com/lgfei/webchat](https://github.com/lgfei/webchat)
 * 技术栈和工具：Java, Spring Boot, MyBatis, Mysql, HTML, CSS, JavaScript, Maven, Git
 
 # 奖项和荣誉
 
-* 2019 年：季度之星，云盛海宏
 * 2014 年：优秀新员工奖，软通动力
 
 # 兴趣爱好
 
-我喜欢研究新技术和编写开源软件。我也是一个热衷于健身和登山的人，在业余时间经常参加户外运动活动。
+我喜欢研究新技术和编写开源软件。

@@ -1,9 +1,9 @@
-# 用过且好用的工具
+# 亲身用过的工具
 
 ## mysql-schema-sync
 [mysql-schema-sync](https://github.com/hidu/mysql-schema-sync) 是
 GO语言实现的MySql表结构自动同步工具, 能增量同步新增的表、字段、索引, 能同步删除字段和索引，不能同步删除表。<br>
-使用需要GO语言环境，安装命令如下：
+需要在GO语言环境中运行，安装命令如下：
 ```shell
 go install github.com/hidu/mysql-schema-sync@master
 ```

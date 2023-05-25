@@ -135,3 +135,38 @@ server {
     }
 }
 ```
+
+## https
+[OHTTPS-免费HTTPS证书](https://ohttps.com/)<br>
+配置示例
+```nginx
+user  nginx;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    server {
+        listen              443 ssl;
+        server_name         www.example.com;
+        ssl_certificate     /etc/nginx/certificates/${你的证书ID}/fullchain.cer;
+        ssl_certificate_key /etc/nginx/certificates/${你的证书ID}/cert.key;
+
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+            root   /usr/share/nginx/html;
+            index  index.html;
+        }
+    }
+}
+```
+
