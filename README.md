@@ -4,7 +4,7 @@
 * 手机：18664571731
 * 邮箱：longuofei@163.com
 * 开源地址：[Github](https://github.com/lgfei)
-* 个人网站：[http://lgfei.com](http://lgfei.com)
+* 个人网站：[https://lgfei.com](https://lgfei.com)
 * 工作年限：2014~至今
 
 # 自我评价
