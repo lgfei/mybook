@@ -3,7 +3,7 @@
 * 姓名：龙国飞
 * 手机：18664571731
 * 邮箱：longuofei@163.com
-* 开源地址：[Github](https://github.com/lgfei)
+* GitHub：[https://github.com/lgfei](https://github.com/lgfei)
 * 个人网站：[https://lgfei.com](https://lgfei.com)
 * 工作年限：2014~至今
 
