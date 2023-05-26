@@ -1,11 +1,12 @@
 # IDEA 学习笔记
 
 ## 快捷键
-设置Keymap
+对于资深程序员来说一般建议直接沿用Eclipse，Eclipse快捷键不在此赘述，这里以Windows为例。如果快捷键不生效一般是与其他软件冲突了。<br>
+***设置Keymap***
 <pre>
 File -> Settings -> Keymap
 </pre>
-对于资深程序员来说一般建议直接沿用Eclipse，Eclipse快捷键不在此赘述，这里以Windows为例。如果快捷键不生效一般是与其他软件冲突了。<br>
+
 ***查找***
 
 | **操作** | **描述** |
