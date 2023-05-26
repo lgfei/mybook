@@ -1,5 +1,55 @@
 # IDEA 学习笔记
 
+## 快捷键
+设置Keymap
+<pre>
+File -> Settings -> Keymap
+</pre>
+对于资深程序员来说一般建议直接沿用Eclipse，Eclipse快捷键不在此赘述，这里以Windows为例。如果快捷键不生效一般是与其他软件冲突了。<br>
+***查找***
+
+| **操作** | **描述** |
+| :---: | :---: |
+| Ctrl + Shift + F | 全局文件内容 |
+| Ctrl + Shift + R | 全局文件内容 |
+| Shift + Shift | 全局搜索类或者方法 |
+| Ctrl + N | 查找class |
+| Ctrl + Shift + N | 查找文件 |
+| Ctrl + Shift + Alt + N | 查找方法 |
+
+***编码***
+
+| **操作** | **描述** |
+| :---: | :---: |
+| Ctrl + X | 删除当前行 |
+| Ctrl + D | 复制当前行 |
+| Ctrl + / | 行注释 |
+| Ctrl + Shift + / | 块注释 |
+| Ctrl + H | 展示类的层级关系 |
+| Ctrl + F12 | 展示类结构（构造函数，成员变量，方法等） |
+| Shift + F6 | 重构/重命名 (包、类、方法、变量、甚至注释等) |
+
+***跳转***
+
+| **操作** | **描述** |
+| :---: | :---: |
+| Alt + 上方向键 | 跳到当前类的上一个方法位置 |
+| Alt + 下方向键 | 跳到当前类的下一个方法位置 |
+| Ctrl + Alt + 左方向键 | 后退到上一次光标的位置 |
+| Ctrl + Alt + 右方向键 | 前进到上一次光标的位置 |
+
+
+## 导入maven项目
+<pre>
+File -> New -> Module from Existing Sources
+</pre>
+
+## UTF-8编码
+* 版本：2022.1.2
+<pre>
+在D:\Program Files\JetBrains\IntelliJ IDEA 2022.1.2\bin\idea64.exe.vmoptions 添加启动参数 -Dfile.encoding=UTF-8
+</pre>
+
 ## FAQ
 ### 创建接口时报错
 <pre>
