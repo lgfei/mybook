@@ -1,7 +1,7 @@
 # IDEA 学习笔记
 
 ## 快捷键
-对于资深程序员来说一般建议直接沿用Eclipse，Eclipse快捷键不在此赘述，这里以Windows为例。如果快捷键不生效一般是与其他软件冲突了。<br>
+虽然可以直接沿用Eclipse的快捷键，但是因为界面布局差异较大，也并不是所有都兼容，用起来还是别扭，所有建议使用标准的快捷键模式，这里以Windows为例。如果快捷键不生效一般是与其他软件冲突了。<br>
 ***设置Keymap***
 <pre>
 File -> Settings -> Keymap
@@ -29,6 +29,8 @@ File -> Settings -> Keymap
 | Ctrl + H | 展示类的层级关系 |
 | Ctrl + F12 | 展示类结构（构造函数，成员变量，方法等） |
 | Shift + F6 | 重构/重命名 (包、类、方法、变量、甚至注释等) |
+| Alt + Enter | 导入包 |
+| Ctrl + Alt + O | 删除无用的import |
 
 ***跳转***
 

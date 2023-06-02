@@ -1,7 +1,7 @@
 # kubesphere采坑记
 
 ## etcd节点必须是奇数个，否则出现如下错误
-<pre>
+```txt
 TASK [etcd : Gen_certs | run cert generation script] **************************************************************
 Wednesday 03 June 2020 09:46:45 +0800 (0:00:00.389) 0:03:40.178 ********
 fatal: [ts-dev-k8s-node-10-9-252-120 -> ts-dev-k8s-master-10-9-251-87]: FAILED! => {
@@ -28,14 +28,20 @@ bash: /usr/local/bin/etcd-scripts/make-ssl-etcd.sh: No such file or directory
 MSG:
 
 non-zero return code
-</pre>
+```
+
 ## node节点的selinux需要手动禁用，否则node节点添加失败
+```shell
+sed -ri 's#(SELINUX=).*#\1disabled#' /etc/selinux/config
+setenforce 0
+```
 
 ## 提前下载镜像要在所有节点都下载，不只是taskbox
+最好是搭建私有镜像仓库，提前将需要的镜像上传至私有仓库，用离线安装的方式能大大加快速度，提高成功率。<br>
 
 ## jq安装问题
 kubesphere安装错误信息
-<pre> 
+```txt
 FAILED - RETRYING: KubeSphere| Installing JQ (YUM) (5 retries left)
 # 手动安装jq错误信息
 Error: Package: jq-1.6-1.el7.x86_64 (/jq-1.6-1.el7.x86_64)
@@ -46,7 +52,7 @@ Error: Package: jq-1.6-1.el7.x86_64 (/jq-1.6-1.el7.x86_64)
               ~libonig.so.4()(64bit)
  You could try using --skip-broken to work around the problem
  You could try running: rpm -Va --nofiles --nodigest
-</pre>
+```
 
 解决问题
 ```shell
@@ -56,9 +62,9 @@ yum install jq.x86_64 0:1.6-1.el7
 ```
 
 ## common.yml里面的
-<pre>
+```txt
 FAILED - RETRYING: Metrics-Server | Waitting for v1beta1.metrics.k8s.io ready
-</pre>
+```
 
 ## metrics-server FailedDiscoveryCheck
 查找到出问题的apiservice
