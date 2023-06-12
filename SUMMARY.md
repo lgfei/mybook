@@ -1,6 +1,6 @@
 # Summary
 
-- [我的简历](README.md)
+<!-- - [我的简历](resume/resume.md)  -->
 - [我的证书](exams/exams.md)
   - [CKA](exams/cka/cka.md)
 - [我的笔记](notes/notes.md)

@@ -118,6 +118,11 @@ kubectl replace --force -f /tmp/xxx.yaml
 echo "明文" | base64
 echo "密文" | base64 --decode
 ```
+输出成一行的两种写法
+```shell
+echo "明文" | base64 -w0
+echo "明文" | base64 | tr -d "\n"
+```
 生成一个32字节的随机密钥并进行base64编码
 ```shell
 head -c 32 /dev/urandom | base64
@@ -335,4 +340,219 @@ spec:
   - /usr/local/bin/kube-proxy
   - --config=/var/lib/kube-proxy/config.conf
   - --hostname-override=$(NODE_NAME)
+```
+
+## killer.sh
+
+### 查漏补缺
+- 设置别名和命令补全 <br/>
+~/.bashrc 添加如下内容
+```shell
+alias k=kubectl
+source /etc/bash_completion
+source <(kubectl completion bash)
+complete -F __start_kubectl k
+```
+- 写到.sh文件中的命令不要用别名
+- 手工强制调度到某一个节点用 nodeName
+```yml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: manual-schedule
+  name: manual-schedule
+  namespace: default
+spec:
+  nodeName: controlplane1        # add the controlplane node name
+  containers:
+  - image: httpd:2.4-alpine
+    imagePullPolicy: IfNotPresent
+    name: manual-schedule
+    resources: {}
+...
+```
+- tolerations: 容忍度，强制部署到controlplane节点
+```yml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod1
+  name: pod1
+spec:
+  containers:
+  - image: httpd:2.4.41-alpine
+    name: pod1-container                       # change
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  tolerations:                                 # add
+  - effect: NoSchedule                         # add
+    key: node-role.kubernetes.io/control-plane # add
+  nodeSelector:                                # add
+    node-role.kubernetes.io/control-plane: ""  # add
+status: {}
+```
+- affinity  nodeAffinity: 亲和性，控制相同
+```yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    id: very-important                  # change
+  name: deploy-important            # important
+spec:
+  replicas: 3                           # change
+  selector:
+    matchLabels:
+      id: very-important                # change
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        id: very-important              # change
+    spec:
+      containers:
+      - image: nginx:1.17.6-alpine
+        name: container1                # change
+        resources: {}
+      - image: kubernetes/pause         # add
+        name: container2                # add
+      affinity:                                             # add
+        podAntiAffinity:                                    # add
+          requiredDuringSchedulingIgnoredDuringExecution:   # add
+          - labelSelector:                                  # add
+              matchExpressions:                             # add
+              - key: id                                     # add
+                operator: In                                # add
+                values:                                     # add
+                - very-important                            # add
+            topologyKey: kubernetes.io/hostname             # add
+status: {}
+```
+- topologyKey topologySpreadConstraint
+```yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    id: very-important                  # change
+  name: deploy-important             # important
+spec:
+  replicas: 3                           # change
+  selector:
+    matchLabels:
+      id: very-important                # change
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        id: very-important              # change
+    spec:
+      containers:
+      - image: nginx:1.17.6-alpine
+        name: container1                # change
+        resources: {}
+      - image: kubernetes/pause         # add
+        name: container2                # add
+      topologySpreadConstraints:                 # add
+      - maxSkew: 1                               # add
+        topologyKey: kubernetes.io/hostname      # add
+        whenUnsatisfiable: DoNotSchedule         # add
+        labelSelector:                           # add
+          matchLabels:                           # add
+            id: very-important                   # add
+status: {}
+```
+- crictl
+```shell
+crictl ps
+crictl logs [容器id]
+crictl inspect [容器id] | grep runtimeType
+```
+- Issuer
+```shell
+openssl x509  -noout -text -in /var/lib/kubelet/pki/kubelet-client-current.pem | grep Issuer
+```
+输出如下
+```txt
+        Issuer: CN = kubernetes
+```
+- Extended Key Usage
+```shell
+openssl x509  -noout -text -in /var/lib/kubelet/pki/kubelet-client-current.pem | grep "Extended Key Usage" -A1
+```
+输出如下
+```txt
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+```
+- kubeadm join
+```shell
+kubeadm join --discovery-token abcdef.1234567890abcdef --discovery-token-ca-cert-hash sha256:1234..cdef 1.2.3.4:6443
+```
+discovery-token 通过 kubeadm token list 或 kubeadm token create 获得 <br/>
+discovery-token-ca-cert-hash 通过下面命令输出
+```shell
+openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+```
+1.2.3.4:6443 这里不要加 https:// <br/>
+- kubectl exec
+```shell
+k exec mypod -it -- echo '这里写你想在pod里面执行的命令'
+```
+- 使用curl访问api-server <br>
+不安全的方式
+```shell
+APISERVER=$(kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}')
+TOKEN=$(kubectl get secret default-token -o jsonpath='{.data.token}' | base64 --decode)
+curl $APISERVER/api --header "Authorization: Bearer $TOKEN" --insecure
+```
+安全的方式
+```shell
+CACERT=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+curl --cacert ${CACERT} https://kubernetes.default/api/v1/secrets -H "Authorization: Bearer ${TOKEN}"
+```
+- valueFrom
+```yml
+      env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: MY_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MY_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: MY_POD_SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+```
+- secretKeyRef
+```yml
+apiVersion: v1
+  kind: Pod
+  metadata:
+    name: my-pod
+  spec:
+    containers:
+    - name: container1
+      image: nginx
+      env:
+      - name: SECRET_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: backend-user
+            key: backend-username
 ```
