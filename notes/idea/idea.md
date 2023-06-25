@@ -41,6 +41,10 @@ File -> Settings -> Keymap
 | Ctrl + Alt + 左方向键 | 后退到上一次光标的位置 |
 | Ctrl + Alt + 右方向键 | 前进到上一次光标的位置 |
 
+***禁用 Shift+Shift *** <br/>
+对于中文用户，习惯了用Shift切换输入法，所以这个快捷键必须禁用，禁用方法如下图：
+![disable_double_shift.jpg](disable_double_shift.jpg)
+
 
 ## 导入maven项目
 <pre>

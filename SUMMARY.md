@@ -1,9 +1,8 @@
 # Summary
 
-<!-- - [我的简历](resume/resume.md)  -->
-- [我的证书](exams/exams.md)
-  - [CKA](exams/cka/cka.md)
+- [我的简历](resume/resume.md)
 - [我的笔记](notes/notes.md)
+  - [CKA](notes/cka/cka.md)
   - [Go](notes/go/go.md)
   - [IDEA](notes/idea/idea.md)
   - [K8S](notes/k8s/k8s.md)

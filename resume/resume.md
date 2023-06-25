@@ -17,10 +17,15 @@
 
 * 编程语言：Java, Golang, Shell, NodeJS
 * 技术框架：Spring, Spring Boot, Spring Cloud, MyBatis, Dubbo, React, Ant Design
-* 开发工具：Linux, Eclipse, IDEA, VS Code, Goland, Git, Maven
+* 开发工具：Linux, Eclipse, IDEA, VS Code, Goland, Git, Maven, Tomcat, Wrapper
 * 容器化：Docker, Kubernetes, Harbor, Helm, kubebuilder
 * 数据库：Mysql, Oracle, Redis, MongDB
 * 中间件：Nginx, HAProxy, Zookeeper, Apollo, Kafka, Minio, Etcd, NFS, GlusterFS
+
+# 技能认证
+重要的不是最后的那张图片，而是过程中所激发的自主学习的能力。
+* CKA (Certified Kubernetes Administrator) <br/>
+![avatar](cka.jpg)
 
 # 教育背景
 
@@ -53,7 +58,3 @@
 * 个人项目名称和描述：在线聊天室，网页版聊天工具，以备不时之需。
 * GitHub地址：[https://github.com/lgfei/webchat](https://github.com/lgfei/webchat)
 * 技术栈和工具：Java, Spring Boot, MyBatis, Mysql, HTML, CSS, JavaScript, Maven, Git
-
-# 奖项和荣誉
-
-* 2014 年：优秀新员工奖，软通动力

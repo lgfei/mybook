@@ -1,5 +1,6 @@
 # CKA-Certified Kubernetes Administrator
-https://www.cncf.io/certification/cka/
+报名地址：https://www.cncf.io/certification/cka/  <br>
+证书查询：https://training.linuxfoundation.org/certification/verify
 
 ## Udemy笔记
 https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/
