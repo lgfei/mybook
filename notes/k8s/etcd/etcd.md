@@ -211,3 +211,15 @@ cluster is healthy
 tail -f /var/log/messages
 journalctl -u etcd
 ```
+
+# 备份
+```shell
+ETCDCTL_API=3 etcdctl --endpoints https://127.0.0.1:2379 211 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key snapshot save /tmp/snapshot-pre-boot.db
+```
+
+# 恢复
+将上面的备份文件的数据恢复到 /var/lib/etcd-from-backup 下，然后将etcd的数据目录指向新的目录即可
+```shell
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key snapshot restore /tmp/snapshot-pre-boot.db --data-dir /var/lib/etcd-from-backup
+```
+

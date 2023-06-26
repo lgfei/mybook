@@ -1,12 +1,12 @@
 #!/bin/bash
 
 TIMES=0
-#每失败一次出现4次ip，3代表只要失败就拉黑
+#最多允许3次失败
 FAIL_TIME=3
 LIST=""
 CURR_TIME=`date "+%Y-%m-%d %H:%M:%S"`
 
-#过滤出协议，尝试连接主机的ip
+#过滤出尝试连接主机的ip
 LIST=$(cat /var/log/secure | grep "authentication failure" | awk '{print$14}' | sed -e 's/rhost=//g' -e 's/ /_/g' | uniq)
 
 #Trusted Hosts

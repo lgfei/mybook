@@ -395,7 +395,7 @@ spec:
     node-role.kubernetes.io/control-plane: ""  # add
 status: {}
 ```
-- affinity  nodeAffinity: 亲和性，控制相同
+- affinity  nodeAffinity: 亲和性，控制相同pod不要调度到同一个node，这样可以用Deployment做到类似于Daemonset的效果。
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -432,7 +432,7 @@ spec:
             topologyKey: kubernetes.io/hostname             # add
 status: {}
 ```
-- topologyKey topologySpreadConstraint
+- topologyKey topologySpreadConstraint 效果同上面的nodeAffinity相似
 ```yml
 apiVersion: apps/v1
 kind: Deployment
