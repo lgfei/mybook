@@ -2,6 +2,7 @@
 
 - [我的简历](resume/resume.md)
 - [我的笔记](notes/notes.md)
+  - [CAP](notes/cap/cap.md)
   - [CKA](notes/cka/cka.md)
   - [Go](notes/go/go.md)
   - [IDEA](notes/idea/idea.md)

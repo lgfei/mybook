@@ -12,7 +12,7 @@
 
 ## 自我评价
 
-有10年以上java开发经验，熟悉Spring和Dubbo框架体系的开发。近4年主要参与公司容器化改造以及devops平台的搭建与开发，对软件开发工具链比较熟悉，熟练掌握docker+k8s的部署与维护，熟悉常用数据库和中间件的使用以及维护，有golang，nodejs，shell实际开发经验。
+有近10年的java开发经验，熟悉Spring和Dubbo框架体系的开发。近4年主要参与公司容器化改造以及devops平台的搭建与开发，对软件开发工具链比较熟悉，熟练掌握docker+k8s的部署与维护，熟悉常用数据库和中间件的使用以及维护，有golang，nodejs，shell实际开发经验。
 
 喜欢研究新技术和编写开源软件，致力成为一名全栈工程师，始终保持对技术的热情，热衷于用自动化提高开发效率，不仅能独立完成项目也能够协调和领导团队完成项目。有良好的编码习惯，对于代码和文档整洁度有轻微的强迫症。
 
@@ -59,7 +59,8 @@
 * VDS：图片处理中心。
 
 ## 个人项目
-
-* 个人项目名称和描述：在线聊天室，网页版聊天工具，以备不时之需。
-* GitHub地址：[https://github.com/lgfei/webchat](https://github.com/lgfei/webchat)
-* 技术栈和工具：Java, Spring Boot, MyBatis, Mysql, HTML, CSS, JavaScript, Maven, Git
+个人作品展览馆: https://lgfei.github.io/ 
+* WebChat: 网页版在线聊天室
+  - 项目描述：房主创建一个房间，并设置房间容纳人数和房间密码，拿到房间链接和房间密码，无需登录注册就可以加入聊天室。在通讯不便的情况下，以备不时之需。
+  - GitHub地址：[https://github.com/lgfei/webchat](https://github.com/lgfei/webchat)
+  - 技术栈和工具：Java, Spring Boot, MyBatis, Mysql, HTML, CSS, JavaScript, Maven, Git

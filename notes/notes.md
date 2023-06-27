@@ -1,4 +1,5 @@
 # 学习笔记
+* [CAP定理](cap/cap.md)
 * [CKA考试历程](cka/cka.md)
 * [Go学习笔记](go/go.md)
 * [IDEA学习笔记](idea/idea.md)
