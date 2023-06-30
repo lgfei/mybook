@@ -3,7 +3,22 @@
 证书查询：https://training.linuxfoundation.org/certification/verify
 
 ## 命令补全
-CKA考试的题目难度不大，在理解基础概念之后，
+CKA考试的题目难度不大，在理解基础概念的前提下，要尽可能地熟悉命令的使用。虽然考试期间可以查看[官方文档](https://kubernetes.io/)，但如果频繁的查看文档，会严重影响你的速度，尤其是当网络情况不是很理想的情况下，所以有必要用命令补全工具来加快速度。<br/>
+* 安装bash-completion
+```shell
+yum install -y bash-completion
+source /usr/share/bash-completion/bash_completion
+```
+* 配置 <br/>
+vim ~/.bashrc
+```text
+source <(kubectl completion bash)
+alias k='kubectl'
+complete -o default -F __start_kubectl k
+```
+```shell
+source ~/.bashrc
+```
 
 ## Udemy笔记
 https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/
