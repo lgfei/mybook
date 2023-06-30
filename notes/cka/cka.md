@@ -2,6 +2,9 @@
 报名地址：https://www.cncf.io/certification/cka/  <br>
 证书查询：https://training.linuxfoundation.org/certification/verify
 
+## 命令补全
+CKA考试的题目难度不大，在理解基础概念之后，
+
 ## Udemy笔记
 https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/
 

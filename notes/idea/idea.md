@@ -58,16 +58,40 @@ File -> New -> Module from Existing Sources
 </pre>
 
 ## FAQ
+***遇到错误提示，不要急于关掉，要尽力去理解提示内容***
+
+### IntelliJ IDEA 重装后无法启动 
+* 问题描述 <br/>
+卸载2019版本重装2022版本后，双击IDEA无反应
+* 原因 <br/>
+新版本不支持旧版本的破解方法，但是在卸载旧版的时候破解相关的文件没有移除，导致新版本无法启动
+* 解决过程 <br/>
+第一步：查看错误信息 <br/>
+<pre>
+1) 在安装目录下找到D:\Program Files\JetBrains\IntelliJ IDEA 2019\bin\idea.bat文件;
+2) 然后编辑此文件，在最后一行添加 pause，用于报错后暂停；
+3) 双击此文件运行，就可以查看错误信息了;
+4) 看完错误信息，记得复原idea.bat
+</pre>
+![img](idea-bat.jpg) <br/>
+第二步：删除残留文件夹
+<pre>
+1）删除旧版文件夹 C:\Users\用户名.IntelliJIdea2019
+2）删除文件夹 C:\Users\用户名\AppData\Local\JetBrains
+3）删除文件夹C:\Users\用户名\AppData\Roaming\JetBrains
+</pre>
+上面步骤完成后再双击IDEA就能正常启动了！
+
 ### 创建接口时报错
 <pre>
 Unable to parse template "Interface" Error message: Selected class file name 'xxx.java' mapped to not java file type 'Files supported via TextMate bundles'
 </pre>
-* 解决过程
+* 解决过程 <br/>
+第一步：
 <pre>
-第1步: 在idea.exe.vmoptions和idea64.exe.vmoptions添加启动参数-Djdk.util.zip.ensureTrailingSlash=false，然后重启
-第2步: Settings->Editor->File Types->Text 找到xxx.java删掉
+在idea.exe.vmoptions和idea64.exe.vmoptions添加启动参数-Djdk.util.zip.ensureTrailingSlash=false，然后重启
 </pre>
-* 问题总结 
+第二步: 
 <pre>
-遇到错误提示，不要急于关掉，要尽力去理解提示内容
+Settings->Editor->File Types->Text 找到xxx.java删掉
 </pre>
