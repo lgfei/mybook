@@ -52,9 +52,10 @@ File -> New -> Module from Existing Sources
 </pre>
 
 ## UTF-8编码
-* 版本：2022.1.2
+* 版本：2022.1.2 <br/>
+在D:\Program Files\JetBrains\IntelliJ IDEA 2022.1.2\bin\idea64.exe.vmoptions 添加启动参数 
 <pre>
-在D:\Program Files\JetBrains\IntelliJ IDEA 2022.1.2\bin\idea64.exe.vmoptions 添加启动参数 -Dfile.encoding=UTF-8
+-Dfile.encoding=UTF-8
 </pre>
 
 ## FAQ
@@ -83,14 +84,15 @@ File -> New -> Module from Existing Sources
 上面步骤完成后再双击IDEA就能正常启动了！
 
 ### 创建接口时报错
-<pre>
-Unable to parse template "Interface" Error message: Selected class file name 'xxx.java' mapped to not java file type 'Files supported via TextMate bundles'
-</pre>
+* 问题描述 <br/>
+Unable to parse template "Interface" Error message: Selected class file name 'xxx.java' mapped to not java file type 'Files supported via TextMate bundles' <br/>
 * 解决过程 <br/>
-第一步：
+第一步： <br/>
+在idea.exe.vmoptions和idea64.exe.vmoptions添加启动参数
 <pre>
-在idea.exe.vmoptions和idea64.exe.vmoptions添加启动参数-Djdk.util.zip.ensureTrailingSlash=false，然后重启
+-Djdk.util.zip.ensureTrailingSlash=false
 </pre>
+然后重启  <br/>
 第二步: 
 <pre>
 Settings->Editor->File Types->Text 找到xxx.java删掉
