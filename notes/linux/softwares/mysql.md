@@ -10,12 +10,12 @@ yum install mysql-server
 
 ## 启动
 ```shell
-service mysqld start
+systemctl start mysqld
 ```
 
 ## 查看是否启动
 ```shell
-service mysqld status
+systemctl status mysqld
 ```
 
 ## 默认没有密码，重置root密码

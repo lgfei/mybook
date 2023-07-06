@@ -53,19 +53,15 @@ yum install gitlab-runner
 ```shell
 gitlab-runner -h
 ```
-<pre>
+```text
 NAME:
    gitlab-runner - a GitLab Runner
-
 USAGE:
    gitlab-runner [global options] command [command options] [arguments...]
-
 VERSION:
    14.1.0 (8925d9a0)
-
 AUTHOR:
    GitLab Inc. <support@gitlab.com>
-
 COMMANDS:
      exec                  execute a build locally
      list                  List all configured runners
@@ -88,7 +84,6 @@ COMMANDS:
      health-check          check health for a specific address
      read-logs             reads job logs from a file, used by kubernetes executor (internal)
      help, h               Shows a list of commands or help for one command
-
 GLOBAL OPTIONS:
    --cpuprofile value           write cpu profile to file [$CPU_PROFILE]
    --debug                      debug mode [$DEBUG]
@@ -96,7 +91,7 @@ GLOBAL OPTIONS:
    --log-level value, -l value  Log level (options: debug, info, warn, error, fatal, panic) [$LOG_LEVEL]
    --help, -h                   show help
    --version, -v                print the version
-</pre>
+```
 
 * 启动runner
 默认的用户是gitlab-runner, 默认的工作空间是 /home/gitlab-runner

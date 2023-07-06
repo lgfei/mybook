@@ -132,7 +132,7 @@ fi
 假设有2台主机A(192.168.1.1)和B(192.168.1.2)，想通过A免密登录的B
 - 第1步：在主机A生成公钥与私钥
 ```shell
-ssh-genkey
+ssh-keygen
 ```
 - 第2步：将主机A ~/.ssh/id_rsa.pub 的内容复制到主机B ~/.ssh/authorized_keys
 - 第3步：假设上面步骤都是用root操作，则在主机A使用如下命令即可以免密登录到B
