@@ -1,14 +1,14 @@
 <!--hide.o-->
-[点击这里下载这份简历（这可能需要大约10秒钟的时间，且不能显示图片）](https://tool.lgfei.com/v1/md/downloadResume)
+[点击这里下载这份简历（这可能需要大约15秒钟的时间，且不能显示图片）](https://tool.lgfei.com/v1/md/downloadResume)
 <!--hide.c-->
 ## 个人信息
 
-* 姓名：龙国飞
-* 手机：18664571731
-* 邮箱：longuofei@163.com
-* GitHub：[https://github.com/lgfei](https://github.com/lgfei)
-* 个人网站：[https://lgfei.com](https://lgfei.com)
-* 工作年限：2014~至今
+- 姓名：龙国飞
+- 手机：18664571731
+- 邮箱：longuofei@163.com
+- GitHub：[https://github.com/lgfei](https://github.com/lgfei)
+- 个人网站：[https://lgfei.com](https://lgfei.com)
+- 工作年限：2014~至今
 
 ## 自我评价
 
@@ -18,16 +18,17 @@
 
 ## 技能清单
 
-* 编程语言：Java，Golang，Shell，NodeJS
-* 技术框架：Spring，Spring Boot，Spring Cloud，MyBatis，Dubbo，React，Ant Design
-* 开发工具：Linux，Eclipse，IDEA，VS Code，Goland，Git，Maven，Tomcat
-* 容器化：Docker，Kubernetes，Harbor，Helm，kubebuilder
-* 数据库：Mysql，Oracle，Redis，MongDB
-* 中间件：Nginx，HAProxy，Zookeeper，Apollo，ActiveMQ，Kafka，Minio，Etcd，NFS，GlusterFS
+- 编程语言：Java，Golang，Shell，NodeJS
+- 技术框架：Spring，Spring Boot，Spring Cloud，MyBatis，Dubbo，React
+- 开发工具：Linux，Eclipse，IDEA，VS Code，Goland，Git，Maven，Tomcat
+- 容器化：Docker，Kubernetes，Harbor，Helm，kubebuilder
+- 数据库：Mysql，Oracle，Redis，MongDB
+- 中间件：Zookeeper，Apollo，ActiveMQ，Kafka，Minio，Etcd
+- 其他：Nginx，HAProxy，NFS，GlusterFS
 
 ## 技能认证
 重要的不是最后的那张图片，而是过程中所激发的自主学习的能力。
-* CKA (Certified Kubernetes Administrator) <br/>
+- CKA (Certified Kubernetes Administrator) <br/>
 <!--hide.o-->
 ![img](cka.jpg)
 <!--hide.c-->
@@ -99,7 +100,7 @@
   - **主要技术**：Oracle，Spring，Struts2，MyBatis，jQuery，Weblogic
 
 ## 个人项目
-个人作品展览馆: https://lgfei.github.io/
+个人作品展览馆: [https://lgfei.github.io/](https://lgfei.github.io/)
 #### OSIO: 企业级PAAS平台
   - **项目背景**：项目以二氧化硅命名，旨在成为一切"高楼大厦"之基石。大部分企业都有自己的基础平台，功能大同小异，实现方式却不尽相同，存在严重的重复造轮子浪费资源的现象。如果有一套通用企业级管理基础平台框架，将是很多中小企业的福音。
   - **项目描述**：OSIO基于Java 17 + Spring Boot 3.0 + Spring Cloud的微服务应用程序框架，可帮助公司更快，更高效地进行微服务开发，其中包括系统设置，用户管理，权限管理，消息管理，文件管理，调度中心，导入导出，平台治理等常用开箱即用的模块，并支持灵活的可配置性和拓展性。
@@ -109,19 +110,19 @@
 #### WebChat: 网页版在线聊天室
   - **项目背景**：在通讯不便的情况下，以备不时之需。
   - **主要功能**：<br/>
-  1）创建房间：由房主创建，可设置房间人数和口令<br/>
-  2）进入房间：房客点击房间链接，输入昵称和口令即可加入群聊
+    1. 创建房间：由房主创建，可设置房间人数和口令
+    2. 进入房间：房客点击房间链接，输入昵称和口令即可加入群聊
   - **GitHub地址**：[https://github.com/lgfei/webchat](https://github.com/lgfei/webchat)
   - **技术栈和工具**：WebSocket，Bootstrap
 
 #### MyTool: 个人工具箱
   - **项目背景**：虽然有很多程序员工具箱网站，但是要么不稳定，要么太繁杂，且很多时候不能一步到位。为了让机器最大程度的帮助自己完成一些繁琐的工作，有必要开发适合自己的个性化的工具箱。
   - **主要功能**：<br/>
-  1）Markdown文件解析并保存为其他格式<br/>
-  2）根据表结构自动生成POJO和JSON模拟数据<br/>
-  3）properties与yaml互转<br/>
-  4）DDL，DML语句自动生成回滚脚本<br/>
-  5）自动生成nginx配置文件<br/>
-  6）加解密
+    1. Markdown文件解析并保存为其他格式
+    2. 根据表结构自动生成POJO和JSON模拟数据
+    3. properties与yaml互转
+    4. DDL，DML语句自动生成回滚脚本
+    5. 自动生成nginx配置文件
+    6. 加解密
   - **GitHub地址**：[https://github.com/lgfei/mytool](https://github.com/lgfei/mytool)
   - **技术栈和工具**：Java，Golang，Shell，NodeJS
