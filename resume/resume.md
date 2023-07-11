@@ -1,5 +1,5 @@
 <!--hide.o-->
-[点击这里下载这份简历（这可能需要大约10秒钟的时间，且不能显示图片）](https://tool.lgfei.com/v1/md/downloadResume)
+[点击这里下载这份简历（这可能需要大约20秒钟的时间，且不能显示图片）](https://tool.lgfei.com/v1/md/downloadResume)
 <!--hide.c-->
 ## 个人信息
 
