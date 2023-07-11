@@ -102,9 +102,9 @@
 个人作品展览馆: https://lgfei.github.io/
 #### OSIO: 企业级PAAS平台
   - **项目背景**：项目以二氧化硅命名，旨在成为一切"高楼大厦"之基石。大部分企业都有自己的基础平台，功能大同小异，实现方式却不尽相同，存在严重的重复造轮子浪费资源的现象。如果有一套通用企业级管理基础平台框架，将是很多中小企业的福音。
-  - **项目描述**：OSIO基于Spring Cloud的微服务应用程序框架，可帮助公司更快，更高效地进行微服务开发，其中包括系统设置，用户管理，权限管理，消息管理，文件管理，调度中心，导入导出，平台治理等常用开箱即用的模块，并支持灵活的可配置性和拓展性。
+  - **项目描述**：OSIO基于Java 17 + Spring Boot 3.0 + Spring Cloud的微服务应用程序框架，可帮助公司更快，更高效地进行微服务开发，其中包括系统设置，用户管理，权限管理，消息管理，文件管理，调度中心，导入导出，平台治理等常用开箱即用的模块，并支持灵活的可配置性和拓展性。
   - **GitHub地址**：[https://github.com/lgfei/osio](https://github.com/lgfei/osio)
-  - **技术栈和工具**：Spring Cloud，Spring Cloud Alibaba，Spring Boot Admin，云效
+  - **技术栈和工具**：Java 17，Spring Boot 3.0，Spring Cloud，Spring Cloud Alibaba，Spring Boot Admin，云效
 
 #### WebChat: 网页版在线聊天室
   - **项目背景**：在通讯不便的情况下，以备不时之需。
@@ -112,7 +112,7 @@
   1）创建房间：由房主创建，可设置房间人数和口令<br/>
   2）进入房间：房客点击房间链接，输入昵称和口令即可加入群聊
   - **GitHub地址**：[https://github.com/lgfei/webchat](https://github.com/lgfei/webchat)
-  - **技术栈和工具**：Spring Boot，MyBatis，Mysql，WebSocket，Bootstrap，Maven
+  - **技术栈和工具**：WebSocket，Bootstrap
 
 #### MyTool: 个人工具箱
   - **项目背景**：虽然有很多程序员工具箱网站，但是要么不稳定，要么太繁杂，且很多时候不能一步到位。为了让机器最大程度的帮助自己完成一些繁琐的工作，有必要开发适合自己的个性化的工具箱。
