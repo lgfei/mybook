@@ -28,4 +28,5 @@
       - [zookeeper](notes/linux/softwares/zookeeper.md)
     - [升级内核](notes/linux/upgrade/upgrade.md)
     - [用户管理](notes/linux/user/user.md)
+  - [NodeJS](notes/nodejs/nodejs.md)
 - [工具箱](tools/tools.md)

@@ -46,9 +46,9 @@ cat /etc/selinux/config
 
 ## 解压缩命令
 ```shell
-tar -zcvf 压缩文件名 .tar.gz 被压缩文件名
+tar -zcvf 压缩文件名.tar.gz 被压缩文件名
 tar -zxvf 压缩文件名.tar.gz
-
+tar -zxvf 压缩文件名.tar.gz -C 目标目录
 ```
 
 ## 修改ssh端口
