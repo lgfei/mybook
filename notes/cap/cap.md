@@ -1,14 +1,16 @@
 # CAP定理
+
+## 定义
 ```text
 Consistency 一致性
 Availability 可用性
 Partition tolerance 分区容忍性
 ```
-定义：在分布式系统中，以上三个特性无法同时满足。
+在分布式系统中，以上三个特性无法同时满足。
 ![img](cap.jpg) 
 
 ## 为什么Consistency和Availability难以同时存在
-一般来说，因为网络的不确定性，Partition tolerance 是必须要满足的，而Consistency和Availability不可能同时存在，所以大部分分布式系统要么是CP（例如：zookeeper），要么是AP（例如：kafka）。<br/>
+一般来说，因为网络的不确定性，Partition tolerance 是必须要满足的，从而 Consistency 和 Availability 不可能同时存在，所以大部分分布式系统要么是 CP（例如：zookeeper，redis，etcd，apollo），要么是 AP（例如：kafka，minio）。<br/>
 简单来说，原因如下：<br/>
 如果要满足一致性，那么其中一个节点（一般是Leader）接收到客户端发来的写操作之后，必须保证所有节点都同步更新数据才能提交事务，在事务提交之前，客户端发过来的读请求是不可用的，这时就不满足可用性了。<br/>
 同理，如果要满足可用性，那么就可能出现不同的节点返回的数据是不一样，这时就不满足一致性了。
