@@ -4,6 +4,7 @@
 - [我的笔记](notes/notes.md)
   - [CAP](notes/cap/cap.md)
   - [CKA](notes/cka/cka.md)
+  - [Dubbo](notes/dubbo/dubbo.md)
   - [Go](notes/go/go.md)
   - [IDEA](notes/idea/idea.md)
   - [K8S](notes/k8s/k8s.md)
