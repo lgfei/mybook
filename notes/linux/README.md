@@ -1,4 +1,9 @@
-# linux 学习笔记
+# Linux
+
+- [定时任务](cron/README.md)
+- [软件安装](softwares/README.md)
+- [升级内核](upgrade/README.md)
+- [用户管理](user/README.md)
 
 ## 查看centos版本
 ```shell

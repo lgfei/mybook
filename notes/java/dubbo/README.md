@@ -1,4 +1,9 @@
-# Dubbo 学习笔记
+# Dubbo
+[官网地址](https://cn.dubbo.apache.org/zh-cn/)
+
+## 看源码之前没想到的
+- dubbo协议本身也是通过扩展点实现的
+- 消费者没有xxx-api.jar也可以通过 GeneralService 用 Map 构造接口和参数进行远程调用
 
 ## Dubbo + K8S 遇到的问题
 

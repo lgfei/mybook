@@ -1,11 +1,12 @@
-# 软件安装配置
-* [gitlab](gitlab.md)
-* [glusterfs](glusterfs.md)
-* [jdk](jdk.md)
-* [mongodb](mongodb.md)
-* [mysql](mysql.md)
-* [nginx](nginx.md)
-* [redis](redis.md)
-* [rundeck](rundeck.md)
-* [tengine](tengine.md)
-* [zookeeper](zookeeper.md)
+# 软件安装
+
+- [gitlab](gitlab.md)
+- [glusterfs](glusterfs.md)
+- [jdk](jdk.md)
+- [mongodb](mongodb.md)
+- [mysql](mysql.md)
+- [nginx](nginx.md)
+- [redis](redis.md)
+- [rundeck](rundeck.md)
+- [tengine](tengine.md)
+- [zookeeper](zookeeper.md)
