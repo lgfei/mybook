@@ -35,9 +35,19 @@ usermod -d /yourpath yourusername
 vim ~/.bashrc
 ```
 添加 
-<pre>
+```text
 cd /yourpath
-</pre>
+```
 ```shell
 source ~/.bashrc
+```
+
+## 删除用户
+- 删除用户和用户主目录下所有文件，不加-r删除用户文件不删除
+```shell
+userdel -r <要删除用户名>
+```
+- 删除用户组
+```shell
+groupdel <要删除用户组>
 ```
