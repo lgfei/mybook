@@ -47,3 +47,11 @@
 - **singletonObjects**：一级缓存，存放的是已经初始化好的bean，即已经完成初始化好的注入对象的代理。最终getBean就是来源于singletonObjects
 - **earlySingletonObjects**：二级缓存，存放的是还没有完全被初始化好的中间对象代理，即已经生成了bean但是这个bean还有部分成员对象还未被注入进来
 - **singletonFactories**：三级缓存，存放的是还未初始化完的bean，而这些bean只是早起的简单对象，并不是代理对象
+
+## @ComponebtScan(xxx) 是通过 ASM 去生成 BeanDefinition
+- 为什么不用反射？
+  > 如果要用反射就必须先把.class文件加载的jvm，那么就不存在懒加载机制了。
+- 为什么要实现懒加载@Lazy？
+  1. 加快启动速度
+  2. 按需加载，节省资源
+  3. 可以避免循环依赖
