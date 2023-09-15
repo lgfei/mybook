@@ -50,8 +50,10 @@
 
 ## @ComponebtScan(xxx) 是通过 ASM 去生成 BeanDefinition
 - 为什么不用反射？
-  > 如果要用反射就必须先把.class文件加载的jvm，那么就不存在懒加载机制了。
+  > 如果要用反射就必须先把.class文件加载到jvm，那么就不存在懒加载机制了。
 - 为什么要实现懒加载@Lazy？
   1. 加快启动速度
   2. 按需加载，节省资源
   3. 可以避免循环依赖
+
+## spring-boot-autoconfigure
