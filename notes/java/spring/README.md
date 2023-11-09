@@ -1,4 +1,5 @@
 # Spring
+- [spring-security](spring-security.md)
 
 ## Bean加载过程
 1. **实例化**：通过读取xml或者注解通过反射机制实例化class对象
@@ -56,4 +57,19 @@
   2. 按需加载，节省资源
   3. 可以避免循环依赖
 
-## spring-boot-autoconfigure
+## spring-boot-autoconfigure & Spring Boot Starter
+- spring.factories 文件的作用
+  - 什么是SPI
+  - Java SPI
+  - Spring SPI
+- 条件注解 @Conditional
+  ```
+  @ConditionalOnBean
+  @ConditionalOnClass
+  @ConditionalOnProperty
+  ...
+  ```
+
+## SpringApplication.run(Xxx.class) 做了哪些工作
+1. 创建Spring容器：new ApplicationContext()
+2. 启动Web服务(Tomcat, Jetty, Undertow, Netty), 默认内置Tomcat
