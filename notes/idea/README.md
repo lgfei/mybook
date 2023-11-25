@@ -1,6 +1,7 @@
 # IDEA
 
 ## 快捷键
+[IntelliJ IDEA快捷键大全 + 动图演示](https://mp.weixin.qq.com/s/vWaDp-yVTMTdZbOX6H_3Kw)<br/>
 虽然可以直接沿用Eclipse的快捷键，但是因为界面布局差异较大，也并不是所有都兼容，用起来还是别扭，所有建议使用标准的快捷键模式，这里以Windows为例。如果快捷键不生效一般是与其他软件冲突了。<br>
 ***设置Keymap***
 ```text
@@ -22,8 +23,9 @@ File -> Settings -> Keymap
 
 | **操作** | **描述** |
 | :---: | :---: |
-| Ctrl + X | 删除当前行 |
+| Ctrl + Y | 删除当前行 |
 | Ctrl + D | 复制当前行 |
+| Ctrl + Shift + U | 大小写切换 |
 | Ctrl + / | 行注释 |
 | Ctrl + Shift + / | 块注释 |
 | Ctrl + H | 展示类的层级关系 |
@@ -40,6 +42,7 @@ File -> Settings -> Keymap
 | Alt + 下方向键 | 跳到当前类的下一个方法位置 |
 | Ctrl + Alt + 左方向键 | 后退到上一次光标的位置 |
 | Ctrl + Alt + 右方向键 | 前进到上一次光标的位置 |
+| Ctrl + G | 跳到指定行 |
 
 
 ***禁用 Shift+Shift*** 
