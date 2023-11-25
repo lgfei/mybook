@@ -4,7 +4,7 @@
 ## 个人信息
 
 - 姓名：龙国飞
-- 出生年月: 1991.03
+- 出生年月：1991.03
 - 手机：18664571731
 - 邮箱：longuofei@163.com
 - GitHub：[https://github.com/lgfei](https://github.com/lgfei)
