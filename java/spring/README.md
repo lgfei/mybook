@@ -2,6 +2,7 @@
 - [spring-security](spring-security.md)
 
 ## Bean加载过程
+关键的类: AbstractAutowireCapableBeanFactory
 1. **实例化**：通过读取xml或者注解通过反射机制实例化class对象
 2. **属性注入**：为添加了@Autowire或者构造方法里的成员变量赋值（通过三级缓存解决循环依赖的问题）
 3. **初始化**：由自己实现，spring负责调用的方法
@@ -43,6 +44,21 @@
 4. **生成AOP代理类**：如果配置了AOP切面，通过cglib生成代理对象，那放入单例池的bean不再是原来的bean而是生成的代理对象
 5. **后置处理**：和初始化方法一样，由自己实现，spring负责调用。实现BeanPostProcessor接口，重写postProcessAfterInitialization方法
 6. **放入单例池**：Map<beanName, 对应的实例对象>
+
+## 属性注入，构造器注入，setter注入
+- 为什么不建议用属性注入？
+  - 可读性差：隐藏了Bean的依赖项
+  - 可测试性差：要想测试Bean的某一个方法必须将所有 @Autowired 修饰的属性注入。如果用构造器或者setter注入，则可以通过手动new的方式选择性的注入，甚至可以脱离Spring容器进行小范围的测试
+- 为了更清晰的描述Bean的结构，建议必须依赖的Bean用构造器注入，可选的依赖用setter注入
+- @Autowired 和 @Resource 的区别
+  - 来源不同
+    > @Autowired 是Spring专有  
+    > @Resource 是JDK自带（JSR-250）更具通用性
+  - 作用域不同
+    > @Resource 不能用在构造方法上
+  - 获取bean的时候 byName 和 byType 顺序不同
+    > @Autowired 先通过byType，找到多个再通过byName过滤
+    > @Resource 先通过byName，找不到再通过byType寻找
 
 ## 三级缓存
 - **singletonObjects**：一级缓存，存放的是已经初始化好的bean，即已经完成初始化好的注入对象的代理。最终getBean就是来源于singletonObjects

@@ -1,7 +1,9 @@
 # MySQL
-从最新版本的linux系统开始，默认的是Mariadb而不是mysql!!！
+
+- [表结构同步](mysql-schema-sync.md)
 
 ## 下载+安装
+从最新版本的linux系统开始，默认的是Mariadb而不是mysql!!！ <br>
 下载RPM，可以前往[MySQL官网](http://dev.mysql.com/downloads/repo/yum/)进行下载
 ```shell
 #5.7

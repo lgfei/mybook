@@ -1,17 +1,15 @@
 **做一个善于记录和总结的人，才不至于虚度光阴。**
 
-- [我的简历](resume/README.md)
-- [我的笔记](notes/README.md)
+- [云原生](cloudnative/README.md)
+- [数据库](database/README.md)
+- [DDD](ddd/README.md)
+- [分布式](distibuted/README.md)
+- [GoLang](golang/README.md)
+- [Java](java/README.md)
+- [Linux](linux/README.md)
+- [中间件](middleware/README.md)
+- [NodeJS](nodejs/README.md)
 - [工具箱](tools/README.md)
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 <br/>
 <br/>
