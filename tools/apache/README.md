@@ -1,6 +1,6 @@
 # Apache 软件基金会
 [Apache 软件基金会](https://www.apache.org/)，全称：Apache Software Foundation，简称：ASF，成立于 1999 年 7 月，是目前世界上最大的最受欢迎的开源软件基金会，也是一个专门为支持开源项目而生的非盈利性组织。
-![img](./apache.png)
+![img](./images/apache.png)
 
 ## httpd
 [httpd](http://httpd.apache.org/)，是 Apache 软件基金会的一个开源 HTTP 服务器，能够运行于 UNIX 和 Windows 上的安全、高效和可扩展服务器。

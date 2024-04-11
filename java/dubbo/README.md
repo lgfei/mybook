@@ -63,7 +63,7 @@ xxx=com.alibaba.dubbo.rpc.protocol.dubbo.XxxProtocol
 ```
 - 步骤5：修改提供者协议
 ```dubbo.protocol.name=xxx```
-- 步骤6：修改提供者协议
+- 步骤6：修改消费者协议
 ```dubbo.protocol.name=xxx```
 
 至此，接口终于能调通了，但是问题远没有结束。

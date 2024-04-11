@@ -44,44 +44,41 @@ firewall-cmd --reload
 下面四种情况分别用http://192.168.1.4/proxy/test.html 进行访问。  
 
 * 第一种
-<pre>
-location  /proxy/ {
-    proxy_pass http://127.0.0.1:81/;
-}
-</pre>
-结论：会被代理到http://127.0.0.1:81/test.html 这个url
-<hr/>
+    ```nginx
+    location  /proxy/ {
+        proxy_pass http://127.0.0.1:81/;
+    }
+    ```
+    结论：会被代理到http://127.0.0.1:81/test.html 这个url
 
 * 第二种(相对于第一种，最后少一个 /)
-<pre>
-location  /proxy/ {
-    proxy_pass http://127.0.0.1:81;
-}
-</pre>
-结论：会被代理到http://127.0.0.1:81/proxy/test.html 这个url
-<hr/>
+    ```nginx
+    location  /proxy/ {
+        proxy_pass http://127.0.0.1:81;
+    }
+    ```
+    结论：会被代理到http://127.0.0.1:81/proxy/test.html 这个url
 
 * 第三种
-<pre>
-location  /proxy/ {
-    proxy_pass http://127.0.0.1:81/ftlynx/;
-}
-</pre>
-结论：会被代理到http://127.0.0.1:81/ftlynx/test.html 这个url。
-<hr/>
+    ```nginx
+    location  /proxy/ {
+        proxy_pass http://127.0.0.1:81/ftlynx/;
+    }
+    ```
+    结论：会被代理到http://127.0.0.1:81/ftlynx/test.html 这个url。
 
 * 第四种(相对于第三种，最后少一个 / )：
-<pre>
-location  /proxy/ {
-    proxy_pass http://127.0.0.1:81/ftlynx;
-}
-</pre>
-结论：会被代理到http://127.0.0.1:81/ftlynxtest.html 这个url
+    ```nginx
+    location  /proxy/ {
+        proxy_pass http://127.0.0.1:81/ftlynx;
+    }
+    ```
+    结论：会被代理到http://127.0.0.1:81/ftlynxtest.html 这个url
 - [参考1](https://yq.aliyun.com/articles/506996?spm=5176.10695662.1996646101.searchclickresult.411f490dl0ZSc0)  
 
 ## 开启文件预览模式
 如果放一个自定义后缀的文件在nginx目录下（例如，my.hosts），然后在浏览器访问这个文件，默认是会把源文件下载到本地，如果不想下载，而想想打开txt文件那样浏览文件内容的话，需要对 conf/mime.types 做如下修改
-<pre>
+```nginx
 types {
     text/html                                        html htm shtml;
     text/css                                         css;
@@ -99,11 +96,11 @@ types {
     text/x-component                                 htc;
     ...
 }
-</pre>
+```
 
 ## 开启目录浏览模式
 如果将nginx作为一个文件下载中心。组需要开启目录浏览功能。如下所示：
-<pre>
+```nginx
         location /dl/ {
             root html;
             #开启目录浏览
@@ -117,7 +114,7 @@ types {
             #展示中文文件名
             charset utf-8,gbk;
         }
-</pre>
+```
 
 ## 禁用浏览器缓存
 对于一些纯静态网页，请求不带版本号或者随机数，如果用户想获取最新的内容需要手动刷新缓存，此时可以配置禁用浏览器缓存以达到每次请求都从服务器拿最新的文件。
@@ -135,6 +132,41 @@ server {
     }
 }
 ```
+
+## upstream 配置的后端服务正常，用 proxy_pass 反向代理的时候一直报 502
+错误日志：
+```text
+*1 connect() to ip:port failed (13: Permission denied) while connecting to upstream
+```
+解决方案：
+- 方法1: 将 nginx 的启动用户改为和当前用户一致，例如将 nginx.conf 的 user nginx; 改为 user root;
+- 方法2：禁用 SELinux
+- 方法3：禁用防火墙
+
+## 新版本的 tomcat 不支持 upstream 中带下划线
+错误日志：
+```text
+2024-02-22T01:20:48.368Z  INFO 1277396 --- [io-8888-exec-10] o.apache.coyote.http11.Http11Processor   : The host [xxx_server] is not valid
+ Note: further occurrences of request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: The character [_] is never valid in a domain name.
+	at org.apache.tomcat.util.http.parser.HttpParser$DomainParseState.next(HttpParser.java:1045) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.tomcat.util.http.parser.HttpParser.readHostDomainName(HttpParser.java:931) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.tomcat.util.http.parser.Host.parse(Host.java:67) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.tomcat.util.http.parser.Host.parse(Host.java:43) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.coyote.AbstractProcessor.parseHost(AbstractProcessor.java:298) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.prepareRequest(Http11Processor.java:785) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:368) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.18.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+```
+解决方案：把 upstream xxx_server 改成 upstream xxx-server
 
 ## https
 [OHTTPS-免费HTTPS证书](https://ohttps.com/)<br>
@@ -169,4 +201,3 @@ http {
     }
 }
 ```
-

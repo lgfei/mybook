@@ -33,6 +33,7 @@ File -> Settings -> Keymap
 | Shift + F6 | 重构/重命名 (包、类、方法、变量、甚至注释等) |
 | Alt + Enter | 导入包 |
 | Ctrl + Alt + O | 删除无用的import |
+| Ctrl + Shift + F9 | 编译指定的文件或者模块 |
 
 ***跳转***
 
@@ -48,7 +49,7 @@ File -> Settings -> Keymap
 ***禁用 Shift+Shift*** 
 
 对于中文用户，习惯了用Shift切换输入法，所以这个快捷键必须禁用，禁用方法如下图：
-![disable_double_shift.jpg](disable_double_shift.jpg)
+![disable_double_shift.jpg](./images/disable_double_shift.jpg)
 
 
 ## 导入maven项目
@@ -79,7 +80,7 @@ File -> New -> Module from Existing Sources
     3) 双击此文件运行，就可以查看错误信息了;
     4) 看完错误信息，记得复原idea.bat
     ```
-    ![img](idea-bat.jpg) <br/>
+    ![img](./images/idea-bat.jpg) <br/>
   - 第二步：删除残留文件夹
     ```text
     1）删除旧版文件夹 C:\Users\用户名.IntelliJIdea2019
@@ -108,7 +109,7 @@ File -> New -> Module from Existing Sources
 * 问题原因<br/>
   可能是我的idea版本落后，没有跟上spring boot 3.0 的步伐。
 * 解决方案
-  ![img](Settings_Editor_Inspection.png)
+  ![img](./images/Settings_Editor_Inspection.png)
 
 ## 执行 main 方法报错
 * 问题描述

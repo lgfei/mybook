@@ -25,7 +25,20 @@ ls -l /etc/ | grep -w "cron"
 ```shell
 crontab -l
 ```
-编辑当前用户的定时任务(保存后会写到/var/spool/cron/root，其中root是当前用户名)
+编辑当前用户的定时任务（保存后会写到/var/spool/cron/root，其中root是当前用户名）。第一次编辑的时候会让你选择一个编辑器，按照通常的习惯选择 2. /usr/bin/vim.basic
+```text
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/vim.tiny
+  4. /bin/ed
+
+Choose 1-4 [1]: 
+```
+如选择错了，可以通过 select-editor 切换
+```shell
+select-editor
+```
 ```shell
 crontab -e
 ```
@@ -33,8 +46,8 @@ crontab -e
 ```shell
 crontab -r
 ```
-<pre>
-格式：
+cron格式
+```text
 *        *        *    *       *         command
 minute   hour    day   month   week      command
 分       时      天    月      星期       命令
@@ -50,10 +63,10 @@ command：要执行的命令，可以是系统命令，也可以是自己编写�
 逗号（,）：表示分隔时段的意思，例如，“1,3,5,7,9”。
 中杠（-）：表示一个时间范围，例如“2-6”表示“2,3,4,5,6”。
 正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。
-</pre>
+```
 
 ## 防止密码爆破攻击
-将脚本文件[autoDeny.sh](https://github.com/lgfei/mybook/blob/master/notes/linux/cron/autoDeny.sh)上传到服务器目录/opt/scripts/<br>
+将脚本文件 [autoDeny.sh](./docs/autoDeny.sh) 上传到服务器目录/opt/scripts/<br>
 添加定时任务 
 ```
 */1 * * * * sh /opt/scripts/autoDeny.sh

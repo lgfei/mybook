@@ -7,10 +7,10 @@ LIST=""
 CURR_TIME=`date "+%Y-%m-%d %H:%M:%S"`
 
 #过滤出尝试连接主机的ip
-LIST=$(cat /var/log/secure | grep "authentication failure" | awk '{print$14}' | sed -e 's/rhost=//g' -e 's/ /_/g' | uniq)
+LIST=$(grep "authentication failure" /var/log/secure | awk '{print$14}' | sed -e 's/rhost=//g' -e 's/ /_/g' | uniq)
 
 #Trusted Hosts
-excludeList=( "121.35.189.154" "210.21.233.21" "183.11.128.194" )
+excludeList=( "116.31.95.82" )
 
 function chkExcludeList()
 {

@@ -29,7 +29,7 @@ usermod -d /yourpath yourusername
 ```
 ### 方法2
 如下图所示，将/root改为/yourpath，root用户登录后默认进入的就是/yourpath了
-![/etc/passwd](https://github.com/lgfei/mybook/raw/master/notes/linux/user/etc-passwd.png)
+![/etc/passwd](./images/etc-passwd.png)
 ### 方法3
 ```shell
 vim ~/.bashrc

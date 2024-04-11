@@ -1,9 +1,9 @@
 # K8S
 
-- [cka](cka/README.md) 
-- [etcd](etcd/README.md) 
-- [kubeadm](kubeadm/README.md)
-- [rbac](rbac/README.md)
+- [cka](./cka.md) 
+- [etcd](./etcd.md) 
+- [kubeadm](./kubeadm.md)
+- [rbac](./rbac.md)
 
 ## 为什么要容器化
 1. 节省服务器资源
@@ -27,7 +27,7 @@
     - **Etcd:** key-value的数据库，负责持久化集群中各资源对象的信息。
     - **kubelet:** 主要负责和Docker交互。
     - **kube-proxy:** 负责为Service提供cluster内部的服务发现和负载均衡，处理外部请求应该访问到那个pod。<br>
-![k8s-cluster](https://github.com/lgfei/mybook/raw/master/notes/k8s/k8s-pod.png)
+![k8s-cluster](./images/k8s-cluster.png)
 
 2. 集群对象关系<br>
     - **Pod:** 一个或多个紧密协作的容器应用组成的逻辑对象，每个Pod会分配一个虚拟的PodIP(主机模式用的是主机IP)，一个Pod内的容器共享Pod的IP和网络配置，用于同外界通信。
@@ -42,7 +42,7 @@
     - **Job:** 一次性任务
     - **CronJob:** 定时任务
     - **Horizontal PodAutoscaler:** 水平自动伸缩控制器<br>
-![k8s-pod](https://github.com/lgfei/mybook/raw/master/notes/k8s/k8s-pod.png)
+![k8s-pod](./images/k8s-pod.png)
 
 ## k8s的网络原理
 ***k8s网络实则是帮助Docker实现跨主机通信***<br>

@@ -1,6 +1,6 @@
 # MySQL
 
-- [表结构同步](mysql-schema-sync.md)
+- [表结构同步](./mysql-schema-sync.md)
 
 ## 下载+安装
 从最新版本的linux系统开始，默认的是Mariadb而不是mysql!!！ <br>

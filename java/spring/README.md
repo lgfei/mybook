@@ -75,9 +75,24 @@
 
 ## spring-boot-autoconfigure & Spring Boot Starter
 - spring.factories 文件的作用
-  - 什么是SPI
-  - Java SPI
-  - Spring SPI
+  - 什么是SPI：提供方定义接口规范且提供默认实现，调用方选择一种实现或者自定义实现。相对于 API 来说，SPI 即定义了接口规范也提供扩展入口，具有较高灵活性，一般在框架开发中比较常见。
+  - Java SPI：在 src/main/resources/META-INF/services 目录创建一个以接口全路径命名的文件（例如：xxx.IAnimal）, 内容为接口的实现类，示例如下：
+    ```text
+    xxx.impl.Cat
+    xxx.impl.Dog
+    ```
+    然后通过 ServiceLoader 加载对应的实现类，示例代码如下
+    ```java
+    public class SPITest {
+      public static void main(String[] args){
+        ServiceLoader<xxx.IAnimal> animals = ServiceLoader.load(IAnimal.class);
+        for (IAnimal animal : animals) {
+          animal.doSomeThing();
+        }
+      }
+    }
+    ```
+  - Spring SPI：src/main/resources/META-INF/spring.factories
 - 条件注解 @Conditional
   ```
   @ConditionalOnBean

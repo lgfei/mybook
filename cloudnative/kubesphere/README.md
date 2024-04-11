@@ -82,7 +82,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l app=
 ```
 
 ## 从 Kubernetes 上卸载 KubeSphere
-- [kubesphere-delete.sh](https://github.com/lgfei/mybook/tree/master/notes/k8s/kubesphere/kubesphere-delete.sh)
+- [kubesphere-delete.sh](./docs/kubesphere-delete.sh)
 
 执行卸载脚本可能出现 namespce一直处于 Terminating 状态。以kubesphere-system为例
 ```shell

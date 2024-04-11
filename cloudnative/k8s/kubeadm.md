@@ -251,7 +251,7 @@ Haproxy实现apiserver的负载均衡
     yum install -y kubelet-1.15.3 kubeadm-1.15.3 kubectl-1.15.3
     ```
 
-3. 编辑kubeadm初始化yaml文件[kubeadm-init.yaml](https://github.com/lgfei/mybook/blob/master/notes/k8s/kubeadm/kubeadm-init.yml)
+3. 编辑kubeadm初始化yaml文件：[kubeadm-init.yaml](./docs/kubeadm-init.yml)
     - advertiseAddress: 192.168.1.101
     - kubernetesVersion: v1.15.3
     - service-node-port-range: 3000-39999
@@ -469,13 +469,13 @@ Haproxy实现apiserver的负载均衡
     kubeadm token create --print-join-command
     ```
 
-11. 部署flannel或者calico<br>
+11. 部署 flannel 或者 calico<br>
 ***注: 部署任何组件，一定不要直接用网上下载的yaml文件部署，一定要下载下来仔细对比，修改相应配置项，类似于*** 
     ```shell
     kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     ``` 
     上一步结束后，看到节点的状态是NotReady，是因为还没部署网络插件<br>
-    - 修改kube-flannel.yml文件内容：[kube-flannel.yml](https://github.com/lgfei/mybook/blob/master/notes/k8s/kubeadm/kube-flannel.yml)<br>
+    - 修改kube-flannel.yml文件内容：[kube-flannel.yml](./docs/kube-flannel.yml)<br>
     需要修改的地方<br>
     net-conf.json
       ```text
@@ -489,7 +489,7 @@ Haproxy实现apiserver的负载均衡
       ```
       flannel插件部署成功后，所有节点的状态会依次变成Ready
     - 部署calico出现 ***BIRD is not ready: BGP not established：xxx*** <br/>
-      修改calico.yaml 配置文件，将 IP_AUTODETECTION_METHOD 环境变量改成指定的网卡（我环境里的网卡名是：eth0），如下所示：
+      修改 [calico.yaml](./docs/calico.yaml) 配置文件，将 IP_AUTODETECTION_METHOD 环境变量改成指定的网卡（我环境里的网卡名是：eth0），如下所示：
       ```shell
       kubectl set env daemonset/calico-node -n kube-system IP_AUTODETECTION_METHOD=interface=eth0
       ```

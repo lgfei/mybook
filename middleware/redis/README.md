@@ -1,4 +1,5 @@
 # Redis
+![img](./images/Redis.png)
 
 ## 方式1：yum 安装
 
