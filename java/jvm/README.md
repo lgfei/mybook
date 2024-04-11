@@ -1,5 +1,6 @@
 # JVM
 Java Virtual Machine，用C++编写实现的，将java代码编译为class文件，再将class文件转化为对应操作系统的指令，完成java程序跨平台运行。
+![img](./images/JVM.png)
 
 ## 为什么要编译成class文件
 理论上说，是可以将java代码直接编译成本地机器码，那为什么还要搞一个class文件的中间层呢？
