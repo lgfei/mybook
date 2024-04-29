@@ -123,7 +123,7 @@ kubectl version
 ```
 
 ### FAQ
-1. 删除pod后，pod会自动重启，因为rc还存在，应先删除rc
+1. 删除pod后，pod会自动重启，因为rc还存在，应删除rc
 ```shell
 kubectl get rc
 kubectl delete rc rcname
@@ -134,6 +134,16 @@ kubectl delete rc rcname
     - imagePullPolicy: Always：总是从镜像库中拉取
     - imagePullPolicy: IfNotPresent: 如果本地不存在才从镜像库中拉取
     - imagePullPolicy: Nerver: 只从本地拉取镜像
+
+3. The maximum number of pending replies per connection has been reached
+随着worker node上的pod不断增长，到了一定时间后，调度到该节点的pod会出现异常：The maximum number of pending replies per connection has been reached. 
+   - 出现这个提示是 Linux 为了防止程序占用过多系统资源导致拒绝服务而做的限制，所以根本解决办法是追加系统资源，或者在安装 k8s 节时是为其[设置合理的资源预留](https://kubernetes.io/zh-cn/docs/tasks/administer-cluster/reserve-compute-resources/)。
+   - 临时解决方案，调整系统参数 max_replies_per_connection。
+     ```
+     vim /usr/share/dbus-1/session.conf
+     systemctl restart dbus.service
+     systemctl daemon-reload
+     ```
 
 ## 参考文献
 - [运维之美](https://www.hi-linux.com/)

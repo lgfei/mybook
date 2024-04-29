@@ -43,4 +43,5 @@
   - [git](tools/git/README.md)
     - [gitlab](tools/git/gitlab.md)
   - [idea](tools/idea/README.md)
+    - [jrebel](tools/idea/jrebel/README.md)
   - [rundeck](tools/rundeck/README.md)

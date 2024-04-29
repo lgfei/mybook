@@ -1,5 +1,7 @@
 # IDEA
 
+- [jrebel](./jrebel/README.md)
+
 ## 快捷键
 [IntelliJ IDEA快捷键大全 + 动图演示](https://mp.weixin.qq.com/s/vWaDp-yVTMTdZbOX6H_3Kw)<br/>
 虽然可以直接沿用Eclipse的快捷键，但是因为界面布局差异较大，也并不是所有都兼容，用起来还是别扭，所有建议使用标准的快捷键模式，这里以Windows为例。如果快捷键不生效一般是与其他软件冲突了。<br>
@@ -44,6 +46,7 @@ File -> Settings -> Keymap
 | Ctrl + Alt + 左方向键 | 后退到上一次光标的位置 |
 | Ctrl + Alt + 右方向键 | 前进到上一次光标的位置 |
 | Ctrl + G | 跳到指定行 |
+| Ctrl + Alt + B | 选择类或者方法，跳到对应的实现类或者实现方法 |
 
 
 ***禁用 Shift+Shift*** 
