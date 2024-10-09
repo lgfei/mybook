@@ -69,6 +69,25 @@ public class Person {
 }
 ```
 添加 address 字段，再将原来保存的文件反序列化，就会报 InvalidClassException 异常，因为反序列化时，Person类的serialVersionUID与序列化时生成的值不一致。所以为了能兼容这种情况，我们必须手动指定 serialVersionUID。
+```java
+import java.io.Serializable;
+
+public class Person implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
+    private String name;
+    private int age;
+    private String address;
+
+    public Person(String name, int age, String address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
+    // Getters and Setters
+}
+```
 
 ### 为什么在 SpringBoot 中不实现 Serializable 接口也不会报错？
 因为 Spring 默认使用的是 JSON 序列化 (Jackson)，而不依赖 Serializable 接口实现序列化和反序列化。而像 RMI 远程调用则需要实现 Serializable 接口。
