@@ -145,6 +145,18 @@ kubectl delete rc rcname
      systemctl daemon-reload
      ```
 
+4. PLEG is not healthy  
+    节点状态一直是 NotReady , 查看 kubelet 日志 ( systemctl status kubelet ) 出现如下错误：
+    ```text
+    kubelet[21928]: E0829 13:50:48.305712   21928 kubelet.go:1845] skipping pod synchronization - PLEG is not   healthy: pleg was last seen active 10m52.160098484s ago; threshold is 3m0s
+    ```
+    解决办法：来源于 https://cloud.tencent.com/developer/article/1884333
+    ```shell
+    systemctl daemon-reexec
+    ```
+    
+
+
 ## 参考文献
 - [运维之美](https://www.hi-linux.com/)
 - [m.unixhot.com](http://m.unixhot.com/kubernetes/kubernetes-aliyun.html)  

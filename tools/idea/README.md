@@ -14,6 +14,8 @@ File -> Settings -> Keymap
 
 | **操作** | **描述** |
 | :---: | :---: |
+| Ctrl + F | 当前文件内容 |
+| Ctrl + R | 当前文件内容替换 |
 | Ctrl + Shift + F | 全局文件内容 |
 | Ctrl + Shift + R | 全局文件内容 |
 | Shift + Shift | 全局搜索类或者方法 |

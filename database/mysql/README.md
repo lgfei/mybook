@@ -31,7 +31,7 @@ systemctl enable mysqld
 systemctl daemon-reload
 ```
 
-## 重置root密码
+## 修改root密码
 5.6默认无密码，先无密码登录
 ```shell
 mysql -u root
@@ -55,6 +55,10 @@ use mysql;
 update user set password=password('yourpassword') where user='root' and host='localhost';  
 flush privileges;  
 ```
+注：5.7 密码字段为 authentication_string，所以应该用下面这条SQL
+```sql
+update user set authentication_string=password("yourpassword") where user='root';
+```
 
 ## 授权root用户远程登录
 ```sql
@@ -76,6 +80,20 @@ FLUSH PRIVILEGES;
 服务启动脚本：/usr/lib/systemd/system/mysqld.service 
 socket文件：/var/run/mysqld/mysqld.pid
 ```
+
+## 重置root密码
+如果忘记了root密码，则需要通skip-grant-tables方式重置密码<br/>
+1. /etc/my.cnf 添加参数 skip-grant-tables
+![img](./images/skip-grant-tables.png)
+2. 重启mysql
+```shell
+systemctl restart mysqld
+```
+3. 无密码登录
+```shell
+mysqld -u root -p
+```
+4. [设置root密码](#修改root密码)
 
 ## FAQ
 - 多版本包冲突

@@ -109,7 +109,7 @@ CMD ["5"]
 ```
 加上Dockerfile1构建出来的镜像是 ubuntu:v1  
 加上Dockerfile2构建出来的镜像是 ubuntu:v2  
-加上Dockerfile3构建出来的镜像是 ubuntu:v3 
+加上Dockerfile3构建出来的镜像是 ubuntu:v3  
 docker run ubuntu:v1 休眠5秒  
 docker run ubuntu:v1 sleep 10 休眠10，原来的sleep 5被覆盖  
 docker run ubuntu:v2 休眠5秒  
