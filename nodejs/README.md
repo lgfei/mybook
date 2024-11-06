@@ -11,11 +11,10 @@ npm -v
 ```
 
 ### 配置全局安装的模块路径和缓存路径
-1. 在nodejs根目录,创建node_global，node_cache文件夹
-2. 配置路径
+配置路径
 ```shell
-npm config set prefix "你的路径\node_global"
-npm config set cache "你的路径\node_cache"
+npm config set prefix "nodejs安装路径\node_global"
+npm config set cache "nodejs路径\node_cache"
 ```
 
 ### 配置环境变量
@@ -28,6 +27,14 @@ NODE_PATH=你的路径\node_modules <br/>
 ### 配置默认仓库地址
 ```shell
 npm config set registry https://registry.npm.taobao.org
+```
+或者
+```
+npm config set registry https://registry.npmmirror.com
+```
+
+### 查看配置是否生效
+```shell
 npm config list
 ```
 
@@ -41,6 +48,23 @@ npm install -g cnpm --registry=https://registry.npmmirror.com
 ```shell
 npm install yarn -g
 ```
+如果执行yarn命令出现如下异常：
+```text
+yarn : 无法加载文件 D:\Programs\nodejs\node_global\yarn.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_P
+olicies。
+```
+解决方案：修改windows的执行策略 <br/>
+1. 打开PowerShell控制台（以管理员身份运行）。
+2. 查看当前策略
+```shell
+get-ExecutionPolicy
+```
+3. 默认情况下，执行策略的值为 Restricted ,表示禁止执行所有脚本。要允许执行所有脚本，可以运行以下命令：
+```shell
+set-ExecutionPolicy Unrestricted
+```
+4. 运行上述命令后，将提示你是否要更改策略。输入 Y 并按下Enter确认更改。
+
 
 ## nvm-windows
 对于window用户来说，不能同时安装多个版本的node环境，要么用高版本覆盖低版本，要么卸载重装。nvm可以实现多版本node环境管理。

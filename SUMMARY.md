@@ -39,6 +39,7 @@
   - [tengine](middleware/tengine/README.md)
   - [zookeeper](middleware/zookeeper/README.md)
 - [NodeJS](nodejs/README.md)
+  - [gitbook](nodejs/gitbook/README.md)
 - [研发工具](tools/README.md)
   - [apache](tools/apache/README.md)
   - [git](tools/git/README.md)
