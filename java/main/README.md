@@ -8,7 +8,7 @@
 ## 多线程
 
 ### CompletableFuture
-CompletableFuture 是 java 8 引入的新特性，它使得异步编程和多认为组合编排变得更容易。
+CompletableFuture 是 java 8 引入的新特性，它使得异步编程和多任务组合编排变得更容易。
 - get 和 join 的区别
   > 相同点
     1. 都会阻塞线程等待 future 返回结果
